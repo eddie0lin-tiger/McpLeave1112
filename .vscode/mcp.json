@@ -2,7 +2,7 @@
     "servers": {
         "MyLeaveMcp": {
             "type": "http",
-            "url": "https://c38g9tvz-5177.asse.devtunnels.ms/sse"
+            "url": "https://upgraded-orbit-qx4qxvrq9cxw4x-5177.app.github.dev/sse"
         }
     }
 } 

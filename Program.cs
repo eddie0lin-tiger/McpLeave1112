@@ -30,9 +30,8 @@ app.Run();
 [McpServerToolType]
 public static class LeaveRequestTool
 {
-
-    [McpServerTool, Description("取得請假天數")]
-    public static int GetLeaveRecordAmount([Description("要查詢請假天數的員工名稱")] string employeeName)
+    [McpServerTool, Description("取得今年剩餘的可請假天數")]
+    public static int getRemainingLeaveDays([Description("要查詢的員工名稱")] string employeeName)
     {
         // 模擬根據員工名稱返回請假天數
         // 在實際應用中，這可能會查詢資料庫
@@ -43,6 +42,19 @@ public static class LeaveRequestTool
         else
             return 3;
     }
+      [McpServerTool, Description("取得今年已經請假的總天數")]
+    public static int getUsedLeaveDays([Description("要查詢的員工名稱")] string employeeName)
+    {
+        // 模擬根據員工名稱返回請假天數
+        // 在實際應用中，這可能會查詢資料庫
+        if (employeeName.ToLower() == "david")
+            return 5;
+        else if (employeeName.ToLower() == "eric")
+            return 6;
+        else
+            return 3;
+    }
+
     [McpServerTool, Description("進行請假，回傳結果")]
     public static string LeaveRequest(
         [Description("請假起始日期")] string 請假起始日期, [Description("請假天數")] int 天數,
